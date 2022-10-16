@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/operation"
+                android:layout_width="match_parent"
+                android:layout_height="35sp"
+
+                android:layout_weight="1"
+                android:gravity="right|center"
+                android:lines="2"
+                android:maxLines="2"
+                android:textSize="25sp" />
+
+
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="match_parent"
+                android:layout_height="35sp"
+
+                android:layout_weight="1"
+                android:gravity="right|center"
+                android:lines="2"
+                android:maxLines="2"
+
+                android:textSize="25sp" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout style="@style/buttonRow">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/modulesign"
+            style="@style/buttonNum"
+
+            android:text="%" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/clearAll"
+            style="@style/buttonNum"
+
+            android:text="C" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/clearOnce"
+            style="@style/buttonNum"
+
+            android:text="⌫" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/divideSign"
+            style="@style/buttonNum"
+            android:text="÷"
+
+            android:textSize="37sp" />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/buttonRow">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/seven"
+            style="@style/buttonNum"
+
+            android:text="7" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/eight"
+            style="@style/buttonNum"
+
+            android:text="8" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/nine"
+            style="@style/buttonNum"
+
+            android:text="9" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/multSign"
+            style="@style/buttonNum"
+
+            android:text="x"
+
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/buttonRow">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/four"
+            style="@style/buttonNum"
+
+            android:text="4" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/five"
+            style="@style/buttonNum"
+
+            android:text="5" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/six"
+            style="@style/buttonNum"
+
+            android:text="6" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/subtractSign"
+            style="@style/buttonNum"
+            android:text="-"
+
+
+            android:textSize="35sp" />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/buttonRow">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/one"
+            style="@style/buttonNum"
+
+            android:text="1" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/two"
+            style="@style/buttonNum"
+
+            android:text="2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/three"
+
+
+            style="@style/buttonNum"
+            android:text="3"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addSign"
+            style="@style/buttonNum"
+            android:text="+"
+
+
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/buttonRow">
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/zero"
+            style="@style/buttonNum"
+
+            android:text="0" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/point"
+            style="@style/buttonNum"
+
+            android:text="." />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/equalSign"
+            style="@style/buttonNum"
+            android:layout_weight="2"
+            android:background="#FFA500"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="="
+
+
+            android:textSize="37dp" />
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
