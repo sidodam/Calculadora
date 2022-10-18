@@ -8,8 +8,6 @@ import android.widget.TextView
 import android.widget.Toast
 
 
-
-
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,10 +17,10 @@ class MainActivity : AppCompatActivity() {
         val btnOperation = findViewById(R.id.operation) as TextView
         val btnResult = findViewById(R.id.result) as TextView
         val btnClear = findViewById(R.id.clearAll) as Button
-        val btnEqual =  findViewById(R.id.equalSign) as Button
-        val btnBack =  findViewById(R.id.clearOnce) as Button
-        val btnAdd =  findViewById(R.id.addSign) as Button
-        val btnSubtract=  findViewById(R.id.subtractSign) as Button
+        val btnEqual = findViewById(R.id.equalSign) as Button
+        val btnBack = findViewById(R.id.clearOnce) as Button
+        val btnAdd = findViewById(R.id.addSign) as Button
+        val btnSubtract = findViewById(R.id.subtractSign) as Button
         val btnMult = findViewById(R.id.multSign) as Button
         val btnDivide = findViewById(R.id.divideSign) as Button
         val btnModule = findViewById(R.id.modulesign) as Button
@@ -39,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         val btnPoint = findViewById(R.id.point) as Button
 
 
-
+        var sumCont = 0;
 
         btnAdd.setOnClickListener {
 
@@ -188,55 +186,55 @@ class MainActivity : AppCompatActivity() {
 
         btnEqual.setOnClickListener {
 
-           var operationText =  btnOperation.text
+            var operationText = btnOperation.text
 
 
-         //   if (it.equals('+') || it.equals('=') || it.equals('/') || it.equals('*')  || it.equals('%')  )
+            var operation = operationText.find { !it.isDigit() && !it.equals('.') }
 
-            var operation =  operationText.find { !it.isDigit() && !it.equals('.') }
+            var s = operationText.split(operation!!) //!! non nullable , its there bro trust me
 
-            var s  = operationText.split(operation!!) //!! non nullable , its there bro trust me
 
-            var num1 = s[0].toDouble()
-            var num2 = s[1].toDouble()
 
-            var calculadora = Calc(num1 , num2)
+            //var num1 = if (s[0].equals(".")) 1.0 else s[0].toDouble()
+            //var num2 = if (s[1].equals(".")) 1.0 else s[1].toDouble()
 
-            if ( operation.equals('+'))
-            {
-                btnResult.text = calculadora.addNumbers().toString()
-            }
-            else if ( operation.equals('-'))
+            try{
+                var num1 =  s[0].toDouble()
+                var num2 =  s[1].toDouble()
 
-            {
-                btnResult.text = calculadora.subtractNumbers().toString()
-            }
+                var calculadora = Calc(num1 , num2)
 
-            else if ( operation.equals('*'))
 
-            {
-                btnResult.text = calculadora.multNumbers().toString()
-            }
+                if (operation.equals('+')) {
+                    btnResult.text = calculadora.addNumbers().toString()
+                } else if (operation.equals('-')) {
+                    btnResult.text = calculadora.subtractNumbers().toString()
+                } else if (operation.equals('*')) {
+                    btnResult.text = calculadora.multNumbers().toString()
+                } else if (operation.equals('/')) {
+                    btnResult.text = calculadora.divideNumbers().toString()
+                } else if (operation.equals('%')) {
+                    btnResult.text = calculadora.moduleNumbers().toString()
+                }
 
-            else if ( operation.equals('/'))
+                btnAdd.isEnabled = true
+                btnSubtract.isEnabled = true
+                btnMult.isEnabled = true
+                btnDivide.isEnabled = true
+                btnModule.isEnabled = true
 
-            {
-                btnResult.text = calculadora.divideNumbers().toString()
-            }
-
-            else if ( operation.equals('%'))
-
-            {
-                btnResult.text = calculadora.moduleNumbers().toString()
             }
 
-        }
+            catch(e :Exception){
+
+                Toast.makeText(this@MainActivity, "Please enter valid numbers", Toast.LENGTH_SHORT).show()
+
+            }
 
 
 
 
-        fun numberAdding(view: View) {
-            Toast.makeText(this@MainActivity, "asdasd", Toast.LENGTH_SHORT).show()
+
         }
 
 
